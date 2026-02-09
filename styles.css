@@ -1,0 +1,96 @@
+/* WeatherSnap - estilos e animações */
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Ícones climáticos - animações leves */
+.weather-icon-rain .drop {
+  animation: drop-fall 1.5s ease-in-out infinite;
+}
+.weather-icon-rain .drop:nth-child(2) { animation-delay: 0.2s; }
+.weather-icon-rain .drop:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes drop-fall {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(4px); opacity: 0.8; }
+}
+
+.weather-icon-cloud {
+  animation: cloud-float 4s ease-in-out infinite;
+}
+
+@keyframes cloud-float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+
+.weather-icon-sun .ray {
+  animation: sun-glow 2s ease-in-out infinite;
+}
+
+@keyframes sun-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.weather-icon-snow .flake {
+  animation: snow-fall 2s ease-in-out infinite;
+}
+.weather-icon-snow .flake:nth-child(2) { animation-delay: 0.3s; }
+.weather-icon-snow .flake:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes snow-fall {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(3px); opacity: 0.9; }
+}
+
+/* Temas dinâmicos - classes aplicadas ao body */
+body.theme-clear {
+  --bg-primary: 15 23 42;
+  --accent: 251 191 36;
+}
+body.theme-cloudy {
+  --bg-primary: 30 41 59;
+  --accent: 148 163 184;
+}
+body.theme-rainy {
+  --bg-primary: 15 23 42;
+  --accent: 96 165 250;
+}
+body.theme-snowy {
+  --bg-primary: 30 41 59;
+  --accent: 224 242 254;
+}
+body.theme-stormy {
+  --bg-primary: 23 23 42;
+  --accent: 167 139 250;
+}
+body.theme-foggy {
+  --bg-primary: 51 65 85;
+  --accent: 203 213 225;
+}
+
+/* Tema claro (hora do dia) */
+body.theme-light {
+  background-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+body.theme-light .bg-slate-800\/80 { background-color: rgba(241, 245, 249, 0.9); }
+body.theme-light .bg-slate-700\/80 { background-color: rgba(226, 232, 240, 0.9); }
+body.theme-light .text-slate-100 { color: #1e293b; }
+body.theme-light .text-slate-300 { color: #475569; }
+body.theme-light .text-slate-400 { color: #64748b; }
+body.theme-light .border-slate-700\/50 { border-color: rgba(203, 213, 225, 0.6); }
+body.theme-light .border-slate-600 { border-color: #cbd5e1; }
+body.theme-light header { background-color: rgba(241, 245, 249, 0.95); border-color: rgba(226, 232, 240, 0.8); }
+
+/* Transição suave ao trocar tema */
+body * {
+  transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease;
+}
